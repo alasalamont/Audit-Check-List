@@ -53,5 +53,22 @@ SHARING
 launchctl list | grep -i "share\|smb\|afp\|screen\|ssh\|internet\|print\|media\|remote"
 ```
 
+=====
+LOCATION SERVICES
++ Check user can allow app to enable the location or not?
+```
+system → privacy & security → location
+```
+
+
+=====
+SCREEN RECORDING + SCREEN SHARING
+
++ 
+```
+sqlite3 ~/Library/Application\ Support/com.apple.TCC/TCC.db "SELECT client FROM access WHERE service = 'kTCCServiceScreenCapture';"
+
+log show --predicate 'eventMessage contains "ScreenCapture"' --info
+```
 
 
