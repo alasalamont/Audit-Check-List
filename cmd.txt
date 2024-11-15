@@ -1,5 +1,17 @@
+=====
+SYSTEM INFO
++ Check system is latest version or not?
+- Expected outcome: No new software available
+```
+softwareupdate --list
 
-List out all applications that does not come by defaults
+defaults read /System/Library/CoreServices/SystemVersion.plist ProductVersion
+```
+
+
+
+
++ List out all applications that does not come by defaults
 ```
 ls /Applications | grep -v -e "Preview.app" -e "Safari.app" -e "Mail.app" -e "Calendar.app" -e "Messages.app" -e "Contacts.app" -e "Photos.app" -e "FaceTime.app" -e "Reminders.app" -e "Notes.app" -e "Music.app" -e "TV.app" -e "Podcasts.app" -e "News.app" -e "Stocks.app" -e "VoiceMemos.app"
 
