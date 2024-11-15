@@ -1,0 +1,10 @@
+
+List out all applications that does not come by defaults
+```
+ls /Applications | grep -v -e "Preview.app" -e "Safari.app" -e "Mail.app" -e "Calendar.app" -e "Messages.app" -e "Contacts.app" -e "Photos.app" -e "FaceTime.app" -e "Reminders.app" -e "Notes.app" -e "Music.app" -e "TV.app" -e "Podcasts.app" -e "News.app" -e "Stocks.app" -e "VoiceMemos.app"
+```
+
+List out all applications that does not come by Apple
+```
+mdfind "kMDItemContentType == 'com.apple.application-bundle' && kMDItemAppStoreHasReceipt != 1" -onlyin /Applications
+```
