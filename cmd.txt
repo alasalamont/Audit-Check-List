@@ -36,10 +36,17 @@ CREDENTIAL
 + Check in browser
 
 =====
+SHARING
 
-+ Check after reset, any tasks running?
++ Check share any folders?
+- Expected outcome: guest_access: 0 (disable)
 ```
-launchctl list | grep -vE '^(com\.apple|_|\-)'
+sharing -l
+```
+
++ Check SMB is sharing?
+```
+sudo defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server
 ```
 
 
