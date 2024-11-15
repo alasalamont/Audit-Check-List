@@ -37,4 +37,9 @@ CREDENTIAL
 
 =====
 
++ Check after reset, any tasks running?
+```
+launchctl list | grep -vE '^(com\.apple|_|\-)'
+```
+
 
