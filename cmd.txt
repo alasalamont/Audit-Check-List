@@ -9,7 +9,7 @@ softwareupdate --list
 + List out all applications that does not come by defaults
 ```
 for dir in /Applications /usr/local /Users; do
-  find "$dir" -name "*.app" -type d | while read -r app; do
+  find "$dir" -name "*.app" -type d 2>/dev/null | while read -r app; do
     if [[ -d "$app/Contents" ]]; then
       version=$(defaults read "$app/Contents/Info.plist" CFBundleShortVersionString 2>/dev/null)
       echo "$app - Version: ${version:-Unknown}"
