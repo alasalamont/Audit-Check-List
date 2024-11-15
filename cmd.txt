@@ -37,16 +37,21 @@ CREDENTIAL
 
 =====
 SHARING
++ Check all sharings
+- Expect outcome
+-   0   com.apple.smbd
+-   0   com.apple.AppleFileServer
+-   0   com.apple.screensharing
+-   0   com.apple.sshd
+-   0   com.apple.InternetSharing
+-   0   com.apple.printd
+-   0   com.apple.mediasharingd
+-   0   com.apple.RemoteDesktopAgent
 
-+ Check share any folders?
-- Expected outcome: guest_access: 0 (disable)
+
 ```
-sharing -l
+launchctl list | grep -i "share\|smb\|afp\|screen\|ssh\|internet\|print\|media\|remote"
 ```
 
-+ Check SMB is sharing?
-```
-sudo defaults read /Library/Preferences/SystemConfiguration/com.apple.smb.server
-```
 
 
