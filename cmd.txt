@@ -14,4 +14,12 @@ mdfind "kMDItemContentType == 'com.apple.application-bundle' && kMDItemAppStoreH
   version=$(mdls -name kMDItemVersion "$app" | awk -F'"' '{print $2}')
   echo "$app - Version: $version"
 done
+
+ls /Applications | while read -r app; do
+  if [[ -d "/Applications/$app/Contents" ]]; then
+    version=$(defaults read "/Applications/$app/Contents/Info.plist" CFBundleShortVersionString 2>/dev/null)
+    echo "$app - Version: ${version:-Unknown}"
+  fi
+done
+
 ```
