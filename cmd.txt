@@ -18,8 +18,23 @@ for dir in /Applications /usr/local /Users; do
 done
 ```
 
+=====
+USERS
++ Check all users that does not come by default
+```
+dscl . list /Users | grep -vE '^(root|daemon|nobody|_|com.apple)'
+```
+
++ Check all users that belong to admin group
+```
+dscl . read /Groups/admin GroupMembership
+```
 
 =====
 CREDENTIAL
 + Check in Note
++ Check in browser
+
+=====
+
 
