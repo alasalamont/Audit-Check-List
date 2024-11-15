@@ -22,4 +22,6 @@ ls /Applications | while read -r app; do
   fi
 done
 
+
+mdfind "kMDItemContentType == 'com.apple.application-bundle' && kMDItemAppStoreHasReceipt != 1"
 ```
